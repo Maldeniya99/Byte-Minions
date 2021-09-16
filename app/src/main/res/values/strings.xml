@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">TravelBee</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="musers">Users</string>
+    <string name="mwallet">Wallet</string>
+    <string name="logout">Logout</string>
+    <string name="search">Search</string>
+    <string name="chat_list">Chat List</string>
+    <string name="mlogin">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="users">Users</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="wallet">Wallet</string>
+    <string name="to_do">To-do</string>
+    <string name="chats">Chats</string>
+    <string name="his_name">His Name</string>
+    <string name="online">online</string>
+    <string name="start_typing">Start typing</string>
+    <string name="his_message">His Message</string>
+    <string name="delivered">delivered</string>
+    <string name="deliveredMy">delivered</string>
+    <string name="not_have_account_register">Not have account? Register</string>
+    <string name="forgot_password_recover">Forgot Password? Recover</string>
+    <string name="mainRegister">Register</string>
+    <string name="mainLogin">Login</string>
+</resources>
