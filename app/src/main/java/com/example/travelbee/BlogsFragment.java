@@ -12,6 +12,7 @@ import android.view.ViewGroup;
  * A simple {@link Fragment} subclass.
  * Use the {@link BlogsFragment#newInstance} factory method to
  * create an instance of this fragment.
+ * Kavindu Shehan
  */
 public class BlogsFragment extends Fragment {
 
