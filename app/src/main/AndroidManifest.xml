@@ -14,9 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelBee">
         <activity
-            android:name=".ChatActivity"
-            android:theme="@style/AppThemeNo"
+            android:name=".CreateMemory"
             android:exported="true" />
+        <activity
+            android:name=".UpdateMemory"
+            android:exported="true"/>
+        <activity
+            android:name=".MemoryPage"
+            android:exported="true"/>
+        <activity
+            android:name=".DistanceCalculator"
+            android:exported="true"/>
+        <activity
+            android:name=".DisplayMemories"
+            android:exported="true"/>
+        <activity
+            android:name=".ChatActivity"
+            android:exported="true"
+            android:theme="@style/AppThemeNo" />
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
@@ -35,6 +50,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
