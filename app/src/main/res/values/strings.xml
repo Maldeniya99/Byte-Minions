@@ -27,4 +27,49 @@
     <string name="forgot_password_recover">Forgot Password? Recover</string>
     <string name="mainRegister">Register</string>
     <string name="mainLogin">Login</string>
+
+    //Kavindu
+    <string name="tv_title">Title</string>
+    <string name="tv_location">Location</string>
+    <string name="tv_date">Date</string>
+    <string name="tv_description">Description</string>
+    <string name="et_title" />
+    <string name="et_location" />
+    <string name="et_date" />
+    <string name="et_description" />
+    <string name="tv_image">Image</string>
+    <string name="btn_upload">Upload</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="tv_heading" />
+    <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
+    <string name="displayTitle" />
+    <string name="displayLocation" />
+    <string name="displayDate" />
+    <string name="displayDescription" />
+    <string name="btn_update">Update</string>
+    <string name="tv_calculator">Distance Calculator</string>
+    <string name="tv_source">Source Location</string>
+    <string name="tv_sourceLocation" />
+    <string name="et_sourceLocation" />
+    <string name="tv_destination">Destination Location</string>
+    <string name="tv_destLocation" />
+    <string name="et_destLocation" />
+    <string name="tv_distance">Distance</string>
+    <string name="tv_calculatedDistance" />
+    <string name="et_distance" />
+    <string name="btn_calculate">Calculate</string>
+    <string name="tv_splashTitle">Powered by</string>
+    <string name="tv_groupName">ByteMinions</string>
+    <string name="title_activity_navigation_bar">NavigationBar</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
 </resources>
