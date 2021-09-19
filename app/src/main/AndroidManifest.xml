@@ -28,6 +28,13 @@
         <activity
             android:name=".DisplayMemories"
             android:exported="true"/>
+
+        <activity
+            android:name=".MainTODOActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".RVActivity"
+            android:exported="true" />
         <activity
             android:name=".ChatActivity"
             android:exported="true"

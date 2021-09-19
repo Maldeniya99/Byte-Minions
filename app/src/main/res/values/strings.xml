@@ -71,5 +71,11 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="edit_title">edit_title</string>
+    <string name="tv_subtitle">tv_subtitle</string>
+    <string name="edit_subtitle">edit_subtitle</string>
+    <string name="tv_desc">tv_desc</string>
+    <string name="edit_desc">edit_desc</string>
+
 
 </resources>
