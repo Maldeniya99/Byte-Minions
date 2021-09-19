@@ -47,10 +47,10 @@ public class MemoryPage extends AppCompatActivity {
         Glide.with(imageView.getContext()).load(image).into(imageView);
     }
 
-    public void onClickEdit(View view){
-        Intent intent = new Intent(MemoryPage.this, UpdateMemory.class);
-        startActivity(intent);
-    }
+//    public void onClickEdit(View view){
+//        Intent intent = new Intent(MemoryPage.this, UpdateMemory.class);
+//        startActivity(intent);
+//    }
 
     public void onClickCancel(View view){
         Intent intent = new Intent(MemoryPage.this, DisplayMemories.class);
