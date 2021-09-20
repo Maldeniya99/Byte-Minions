@@ -2,13 +2,14 @@ package com.example.travelbee.models;
 
 public class ModelUsers {
 
-    String name, email,search,phone,image,cover, uid;
+    String name, email,search,phone,image,cover, uid, onlineStatus, typingTo;
+    boolean isBlocked = false;
 
     public ModelUsers(){
 
     }
 
-    public ModelUsers(String name, String email, String search, String phone, String image, String cover, String uid) {
+    public ModelUsers(String name, String email, String search, String phone, String image, String cover, String uid, String onlineStatus, String typingTo, boolean isBlocked) {
         this.name = name;
         this.email = email;
         this.search = search;
@@ -16,6 +17,9 @@ public class ModelUsers {
         this.image = image;
         this.cover = cover;
         this.uid = uid;
+        this.onlineStatus = onlineStatus;
+        this.typingTo = typingTo;
+        this.isBlocked = isBlocked;
     }
 
     public String getName() {
@@ -72,5 +76,29 @@ public class ModelUsers {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getOnlineStatus() {
+        return onlineStatus;
+    }
+
+    public void setOnlineStatus(String onlineStatus) {
+        this.onlineStatus = onlineStatus;
+    }
+
+    public String getTypingTo() {
+        return typingTo;
+    }
+
+    public void setTypingTo(String typingTo) {
+        this.typingTo = typingTo;
+    }
+
+    public boolean isBlocked() {
+        return isBlocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        isBlocked = blocked;
     }
 }
