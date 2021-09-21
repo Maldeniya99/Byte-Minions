@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.travelbee.adapters.Adapter;
 import com.example.travelbee.models.Memories;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,14 +21,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DisplayMemories extends AppCompatActivity {
     RecyclerView recyclerView;
     Adapter adapter;
-    List<Memories> items;
-    DatabaseReference databaseReference;
+    ArrayList<Memories> items;
+    DatabaseReference reference;
     ImageView add;
+
+    String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,31 +40,32 @@ public class DisplayMemories extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         add = findViewById(R.id.img_add);
+        items = new ArrayList<Memories>();
 
-        items = new ArrayList<>();
-        databaseReference = FirebaseDatabase.getInstance().getReference("Memories");
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(currentuser).child("Memories");
 
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds:snapshot.getChildren()){
-                    Memories memories = ds.getValue(Memories.class);
-                    items.add(memories);
+                for(DataSnapshot dataSnapshot1: snapshot.getChildren())
+                {
+                    Memories p = dataSnapshot1.getValue(Memories.class);
+                    items.add(p);
                 }
-
-                adapter = new Adapter(items);
+                adapter = new Adapter(DisplayMemories.this, items);
                 recyclerView.setAdapter(adapter);
-
+                adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
             }
         });
-        
 
     }
+
+
 
     public void onClick(View view){
         Intent intent = new Intent(DisplayMemories.this, CreateMemory.class);

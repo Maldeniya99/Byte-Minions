@@ -1,9 +1,11 @@
 package com.example.travelbee.adapters;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,47 +15,66 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.travelbee.MemoryPage;
 import com.example.travelbee.R;
+import com.example.travelbee.UpdateMemory;
 import com.example.travelbee.models.Memories;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter{
-    private List<Memories> data;
 
-    public Adapter(List<Memories> data) {
-        this.data = data;
+public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
+
+    Context context;
+    ArrayList<Memories> myMemories;
+
+    public Adapter(Context c, ArrayList<Memories> p){
+        context = c;
+        myMemories = p;
     }
 
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
-        ViewHolderClass viewHolderClass =  new ViewHolderClass(view);
-        return viewHolderClass;
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ViewHolderClass viewHolderClass = (ViewHolderClass)holder;
-        Memories memories = data.get(position);
-        viewHolderClass.textTitle.setText(memories.getTitle());
-        Glide.with(viewHolderClass.dbImage.getContext()).load(memories.getImageUrl()).into(viewHolderClass.dbImage);
+    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+        myViewHolder.textTitle.setText(myMemories.get(i).getTitle());
+        myViewHolder.textDate.setText(myMemories.get(i).getDate());
+        Glide.with(myViewHolder.dbImage.getContext()).load(myMemories.get(i).getImageUrl()).into(myViewHolder.dbImage);
 
-//        viewHolderClass.dbImage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(context)
-//            }
-//        });
+        final String getTitle = myMemories.get(i).getTitle();
+        final String getLocation = myMemories.get(i).getLocation();
+        final String getDate = myMemories.get(i).getDate();
+        final String getDescription = myMemories.get(i).getDescription();
+        final String getImage = myMemories.get(i).getImageUrl();
+        final String getKey = myMemories.get(i).getKeyMemories();
 
-        viewHolderClass.itemView.setOnClickListener(new View.OnClickListener() {
+        myViewHolder.btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), MemoryPage.class);
-                i.putExtra("title", memories.getTitle());
-                i.putExtra("location", memories.getLocation());
-                i.putExtra("date", memories.getDate());
-                i.putExtra("description", memories.getDescription());
-                i.putExtra("image", memories.getImageUrl());
-                v.getContext().startActivity(i);
+            public void onClick(View view) {
+                Intent aa = new Intent(context, UpdateMemory.class);
+                aa.putExtra("title", getTitle);
+                aa.putExtra("location", getLocation);
+                aa.putExtra("date", getDate);
+                aa.putExtra("description", getDescription);
+                aa.putExtra("image", getImage);
+                aa.putExtra("keyMemories", getKey);
+                context.startActivity(aa);
+            }
+        });
+
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent aa = new Intent(context, MemoryPage.class);
+                aa.putExtra("title", getTitle);
+                aa.putExtra("location", getLocation);
+                aa.putExtra("date", getDate);
+                aa.putExtra("description", getDescription);
+                aa.putExtra("image", getImage);
+                aa.putExtra("keyMemories", getKey);
+                context.startActivity(aa);
             }
         });
 
@@ -61,29 +82,24 @@ public class Adapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return myMemories.size();
     }
 
-    public class ViewHolderClass extends RecyclerView.ViewHolder{
-
-        TextView textTitle, textLocation, textDate, textDescription;
+    class MyViewHolder extends RecyclerView.ViewHolder{
+        TextView textTitle, textLocation, textDate, textDescription,keyMemories;
         ImageView dbImage;
+        Button btn;
 
-        public ViewHolderClass(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView){
             super(itemView);
 
             textTitle = itemView.findViewById(R.id.text_title_new);
             dbImage = itemView.findViewById(R.id.iv_uploaded_new);
-//
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent i = new Intent(v.getContext(), MemoryPage.class);
-//                    i.putExtra("title",data.get(getAdapterPosition()));
-//                    v.getContext().startActivity(i);
-//                }
-//            });
+            textDate = itemView.findViewById(R.id.text_date_new);
+            btn = itemView.findViewById(R.id.update_btn);
+
         }
+
     }
 
 }
