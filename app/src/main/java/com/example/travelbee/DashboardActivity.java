@@ -8,13 +8,13 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -48,7 +48,12 @@ public class DashboardActivity extends AppCompatActivity {
         ft1.commit();
 
 
+
+
+
     }
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener selectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -104,6 +109,8 @@ public class DashboardActivity extends AppCompatActivity {
             //user is signed in stay here
             //set email of logged in user
             //mProfileTv.setText(user.getEmail());
+
+
         }else{
             //user not signed in, go to main activity
             startActivity(new Intent(DashboardActivity.this, MainActivity.class));

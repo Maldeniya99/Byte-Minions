@@ -304,7 +304,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             Toast.makeText(LoginActivity.this, ""+user.getEmail(),Toast.LENGTH_SHORT).show();
                             //go to profile activity after logged in
-                            startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+                            startActivity(new Intent(LoginActivity.this,DashboardActivity.class));
                             finish();
                             //updateUI(user);
                         } else {

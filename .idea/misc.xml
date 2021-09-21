@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Byte-Minions/app/src/main/res/layout/activity_main.xml" value="0.203125" />
+        <entry key="..\:/Byte-Minions/app/src/main/res/layout/activity_main_todo.xml" value="0.203125" />
+        <entry key="..\:/Byte-Minions/app/src/main/res/layout/activity_rvactivity.xml" value="0.203125" />
+        <entry key="..\:/Byte-Minions/app/src/main/res/layout/layout_item.xml" value="0.203125" />
+        <entry key="..\:/Byte-Minions/app/src/main/res/menu/option_menu.xml" value="0.2708333333333333" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-hdpi/light_blue_gradient.xml" value="0.1" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/backarrow.xml" value="0.13333333333333333" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/shape.xml" value="0.19322916666666667" />
