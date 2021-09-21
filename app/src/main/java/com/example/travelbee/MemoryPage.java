@@ -2,7 +2,6 @@ package com.example.travelbee;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,19 +42,9 @@ public class MemoryPage extends AppCompatActivity {
         String description = i.getStringExtra("description");
         descriptionView.setText(description);
 
-        String image = i.getStringExtra("image");
-        Glide.with(imageView.getContext()).load(image).into(imageView);
+        String image_url = i.getStringExtra("image");
+        Glide.with(imageView.getContext()).load(image_url).into(imageView);
+
     }
 
-
-    /*public void onClickEdit(View view){
-      Intent intent = new Intent(MemoryPage.this, UpdateMemory.class);
-       startActivity(intent);
-   }*/
-
-
-    public void onClickCancel(View view){
-        Intent intent = new Intent(MemoryPage.this, DisplayMemories.class);
-        startActivity(intent);
-    }
 }

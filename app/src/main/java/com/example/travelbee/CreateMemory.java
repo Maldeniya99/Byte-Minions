@@ -19,29 +19,38 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.travelbee.models.Memories;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Random;
 
 public class CreateMemory extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     ImageView image;
     TextInputEditText date, title, location, description;
     ImageView picker;
     Button upload, cancel;
+    Integer memoryNum = new Random().nextInt();
+    String keyMemory = Integer.toString(memoryNum);
 
     Uri imageUri;
 
-    private DatabaseReference db = FirebaseDatabase.getInstance().getReference("Memories");
-    private StorageReference storage = FirebaseStorage.getInstance().getReference();
+    String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+    String storagePath = "Memories/";
+
+    DatabaseReference db;
+    StorageReference storage = FirebaseStorage.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +62,11 @@ public class CreateMemory extends AppCompatActivity implements DatePickerDialog.
         image = findViewById(R.id.iv_upload);
         date = findViewById(R.id.et_date);
         picker = findViewById(R.id.img_datepicker);
-        title = findViewById(R.id.et_sourceLocation);
+        title = findViewById(R.id.et_title);
         location = findViewById(R.id.et_location);
         description = findViewById(R.id.et_description);
         upload = findViewById(R.id.btn_update);
-        cancel = findViewById(R.id.btn_cancel);
+        cancel = findViewById(R.id.btn_delete);
 
         picker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,24 +95,34 @@ public class CreateMemory extends AppCompatActivity implements DatePickerDialog.
 
             private void InsertToDB() {
                 if(imageUri != null) {
-//                    StorageReference reference =  storage.getReference().child("images/*" + UUID.randomUUID().toString());
-                    final StorageReference reference1 = storage.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
+                    StorageReference reference1 = storage.child(storagePath+ System.currentTimeMillis() + "." + getFileExtension(imageUri));
+                    db = FirebaseDatabase.getInstance().getReference("Users").child(currentuser).child("Memories").child("Memory" + memoryNum);
                     reference1.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             reference1.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
-                                    Intent i = new Intent(CreateMemory.this, DisplayMemories.class);
-                                    String memoryId = db.push().getKey();
-                                    String title1 = title.getText().toString();
-                                    String location1 = location.getText().toString();
-                                    String description1 = description.getText().toString();
-                                    String date1 = date.getText().toString();
-                                    Memories memories = new Memories(uri.toString(), title1, location1, description1, date1);
-                                    db.child(memoryId).setValue(memories);
-                                    Toast.makeText(CreateMemory.this, "Memory Created Successfully", Toast.LENGTH_SHORT).show();
-                                    startActivity(i);
+                                    db.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            snapshot.getRef().child("date").setValue(date.getText().toString());
+                                            snapshot.getRef().child("description").setValue(description.getText().toString());
+                                            snapshot.getRef().child("imageUrl").setValue(uri.toString());
+                                            snapshot.getRef().child("keyMemories").setValue(keyMemory);
+                                            snapshot.getRef().child("location").setValue(location.getText().toString());
+                                            snapshot.getRef().child("title").setValue(title.getText().toString());
+
+                                            Intent a = new Intent(CreateMemory.this, DisplayMemories.class);
+                                            Toast.makeText(CreateMemory.this, "Memory Created Successfully", Toast.LENGTH_SHORT).show();
+                                            startActivity(a);
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
                                 }
                             });
                         }

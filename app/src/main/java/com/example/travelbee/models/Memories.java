@@ -9,20 +9,30 @@ public class Memories implements Parcelable {
     private String location;
     private String description;
     private String date;
+    private String keyMemories;
 
     public Memories(){
 
     }
 
-    public Memories(String imageUrl, String title, String location, String description, String date) {
+    public Memories(String imageUrl, String title, String location, String description, String date, String keyMemories) {
         this.imageUrl = imageUrl;
         this.title = title;
         this.location = location;
         this.description = description;
         this.date = date;
+        this.keyMemories = keyMemories;
     }
 
     public Memories(Parcel in) {
+    }
+
+    public String getKeyMemories() {
+        return keyMemories;
+    }
+
+    public void setKeyMemories(String keyMemories) {
+        this.keyMemories = keyMemories;
     }
 
     public String getDate() {
