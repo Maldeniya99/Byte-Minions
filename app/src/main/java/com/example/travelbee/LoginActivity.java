@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
         notHaveAccountTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, BudgetActivity.class));
                 finish();
             }
         });
@@ -218,7 +218,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             pd.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+                            startActivity(new Intent(LoginActivity.this,DashboardActivity.class));
                             finish();
 
                         } else {
