@@ -18,20 +18,19 @@
             android:exported="true" />
         <activity
             android:name=".UpdateMemory"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".MemoryPage"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".DistanceCalculator"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".DisplayMemories"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".MainTODOActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".RVActivity"
             android:exported="true" />
@@ -44,6 +43,9 @@
             android:exported="true" />
         <activity
             android:name=".DashboardActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

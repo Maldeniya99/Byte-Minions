@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1059105929712",
+    "firebase_url": "https://travelbee-66f3c-default-rtdb.firebaseio.com",
     "project_id": "travelbee-66f3c",
     "storage_bucket": "travelbee-66f3c.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1059105929712-6vgtkqs9ujdctalgj2ajnvem88s4tpe0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelbee",
+            "certificate_hash": "6975445e2ca0ddb2e17896c0ea05c422fa801f9c"
+          }
+        },
         {
           "client_id": "1059105929712-7h7mkr1i6vtkofi5mi3dpejoujkqkv77.apps.googleusercontent.com",
           "client_type": 3

@@ -62,11 +62,11 @@ public class CreateMemory extends AppCompatActivity implements DatePickerDialog.
         image = findViewById(R.id.iv_upload);
         date = findViewById(R.id.et_date);
         picker = findViewById(R.id.img_datepicker);
-        title = findViewById(R.id.et_title);
+        title = findViewById(R.id.et_current);
         location = findViewById(R.id.et_location);
         description = findViewById(R.id.et_description);
         upload = findViewById(R.id.btn_update);
-        cancel = findViewById(R.id.btn_delete);
+        cancel = findViewById(R.id.btn_cancel);
 
         picker.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -17,7 +17,7 @@
 
     <style name="AppThemeNo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/layouts</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorPrimaryDark">@color/white</item>
         <item name="colorAccent">@color/purple_500</item>
     </style>
 

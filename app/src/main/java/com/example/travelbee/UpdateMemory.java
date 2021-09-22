@@ -1,10 +1,8 @@
 package com.example.travelbee;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,10 +21,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -60,14 +56,14 @@ public class UpdateMemory extends AppCompatActivity implements DatePickerDialog.
 
         getSupportActionBar().hide();
 
-        titleName = findViewById(R.id.et_title);
+        titleName = findViewById(R.id.et_current);
         locationName = findViewById(R.id.et_location);
         picker = findViewById(R.id.img_datepicker);
         dateView = findViewById(R.id.et_date);
         descriptionView = findViewById(R.id.et_description);
         imageView = findViewById(R.id.iv_upload);
         update = findViewById(R.id.btn_update);
-        delete = findViewById(R.id.btn_delete);
+        delete = findViewById(R.id.btn_cancel);
         back = findViewById(R.id.arrow_back);
 
         Intent i = getIntent();
@@ -160,44 +156,44 @@ public class UpdateMemory extends AppCompatActivity implements DatePickerDialog.
             }
         });
 
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(UpdateMemory.this);
-                builder.setTitle("Delete");
-                builder.setMessage("Are you sure you want to delete this?");
-                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                db.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
-                                            StorageReference storageReference = firebaseStorage.getReferenceFromUrl(image_url);
-                                            storageReference.delete();
-
-                                            Intent a = new Intent(UpdateMemory.this, DisplayMemories.class);
-                                            Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_SHORT).show();
-                                            startActivity(a);
-                                        }
-                                        Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                            }
-                        });
-
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getApplicationContext(), "Cancelled.", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                builder.show();
-
-            }
-        });
+//        delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(UpdateMemory.this);
+//                builder.setTitle("Delete");
+//                builder.setMessage("Are you sure you want to delete this?");
+//                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialogInterface, int i) {
+//                                db.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                    @Override
+//                                    public void onComplete(@NonNull Task<Void> task) {
+//                                        if (task.isSuccessful()) {
+//                                            FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+//                                            StorageReference storageReference = firebaseStorage.getReferenceFromUrl(image_url);
+//                                            storageReference.delete();
+//
+//                                            Intent a = new Intent(UpdateMemory.this, DisplayMemories.class);
+//                                            Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_SHORT).show();
+//                                            startActivity(a);
+//                                        }
+//                                        Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
+//                                    }
+//                                });
+//                            }
+//                        });
+//
+//                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        Toast.makeText(getApplicationContext(), "Cancelled.", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//
+//                builder.show();
+//
+//            }
+//        });
 
 
     }
