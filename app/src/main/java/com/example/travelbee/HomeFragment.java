@@ -71,6 +71,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), BudgetActivity.class);
+                startActivity(intent);
+            }
+        });
+
        return view;
     }
 
