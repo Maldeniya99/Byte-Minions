@@ -7,11 +7,7 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-<<<<<<< HEAD
-            <value value="C:\Users\ASUS\.android\avd\Pixel_3_API_30.avd" />
-=======
             <value value="C:\Users\Kavindu Shehan\.android\avd\Pixel_4_API_27.avd" />
->>>>>>> 02e60c2ebd8b9e7cf7d0c52320cc2c97f52ef051
           </Key>
         </deviceKey>
       </Target>
