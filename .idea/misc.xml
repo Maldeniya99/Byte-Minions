@@ -45,6 +45,15 @@
         <entry key="..\:/TravelBee/app/src/main/res/layout/row_users.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/menu/menu_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_add.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_entertainment.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_food.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_house.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_transport.xml" value="0.14074074074074075" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/activity_budget.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/input_budget_layout.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/retrieve_budget.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/update_budget.xml" value="0.1" />
       </map>
     </option>
   </component>
