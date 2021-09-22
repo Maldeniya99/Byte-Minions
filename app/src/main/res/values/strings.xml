@@ -78,5 +78,14 @@
     <string name="edit_desc">edit_desc</string>
     <string name="fab_content_desc" />
 
+    //sandani
+    <string-array name="items">
+        <item>select item</item>
+        <item>Transport</item>
+        <item>Food</item>
+        <item>Entertainment</item>
+        <item>Other</item>
+    </string-array>
+
 
 </resources>
