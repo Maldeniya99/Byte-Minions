@@ -11,11 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="64dp"
         android:fontFamily="@font/allerta"
         android:text="@string/tv_calculator"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_source"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,85 +26,38 @@
         android:id="@+id/tv_source"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="18dp"
         android:fontFamily="@font/allerta"
         android:text="@string/tv_source"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_source"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_calculator" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_sourceLocation"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/tv_sourceLocation"
-        android:textColorHint="@color/black"
-        app:boxBackgroundColor="@color/inputFields"
-        app:boxStrokeWidth="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_source">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/et_sourceLocation"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_destination"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="14dp"
         android:fontFamily="@font/allerta"
         android:text="@string/tv_destination"
         android:textAlignment="center"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_destLocation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sourceLocation" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_destLocation"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/tv_destLocation"
-        android:textColorHint="@color/black"
-        app:boxBackgroundColor="@color/inputFields"
-        app:boxStrokeWidth="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_destination">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_destLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/et_destLocation"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/et_source" />
 
     <TextView
         android:id="@+id/tv_distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="11dp"
         android:fontFamily="@font/allerta"
         android:text="@string/tv_distance"
         android:textSize="20sp"
@@ -110,45 +65,58 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_destLocation" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tv_calculatedDistance"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/tv_calculatedDistance"
-        android:textColorHint="@color/black"
-        app:boxBackgroundColor="@color/inputFields"
-        app:boxStrokeWidth="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_distance">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_distance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/et_distance"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/et_destLocation" />
 
     <Button
         android:id="@+id/btn_calculate"
         android:layout_width="265dp"
         android:layout_height="72dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/buttons"
         android:text="@string/btn_calculate"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_calculatedDistance" />
+
+    <TextView
+        android:id="@+id/tv_calculatedDistance"
+        android:layout_width="330dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_distance" />
+
+    <EditText
+        android:id="@+id/et_destLocation"
+        android:layout_width="336dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_distance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_destination" />
+
+    <EditText
+        android:id="@+id/et_source"
+        android:layout_width="336dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_destination"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_source" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

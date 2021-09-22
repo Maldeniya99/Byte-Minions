@@ -9,26 +9,47 @@
         <entry key="..\:/Byte-Minions/app/src/main/res/layout/layout_item.xml" value="0.203125" />
         <entry key="..\:/Byte-Minions/app/src/main/res/menu/option_menu.xml" value="0.2708333333333333" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-hdpi/light_blue_gradient.xml" value="0.1" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-mdpi/ic_menu.xml" value="0.12037037037037036" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/backarrow.xml" value="0.13333333333333333" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/ic_plus_24.xml" value="0.26666666666666666" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/shape.xml" value="0.19322916666666667" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/yellow_black_gradiant.xml" value="0.171875" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/font/aladin.xml" value="0.1953125" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/font/allerta.xml" value="0.1953125" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_chat.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_create_memory.xml" value="0.264" />
-        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_display_memories.xml" value="0.4" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_display_memories.xml" value="0.264" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_distance_calculator.xml" value="0.264" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_main_todo.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_memory_page.xml" value="0.264" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_nav_main.xml" value="0.25364583333333335" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_new.xml" value="0.4" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_rvactivity.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/activity_update_memory.xml" value="0.4" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_blogs.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_chat_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_todo.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_users.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_wallet.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/item.xml" value="0.4" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/layout_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/main_nav_drawer.xml" value="0.25364583333333335" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/newtest.xml" value="0.16510416666666666" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/row_chat_left.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/row_chat_right.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/row_users.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/drawable-anydpi/ic_edit_black.xml" value="0.2703125" />
         <entry key="..\:/TravelBee/app/src/main/res/drawable-anydpi/ic_edit_white.xml" value="0.2703125" />
         <entry key="..\:/TravelBee/app/src/main/res/drawable/bg_sender.xml" value="0.2703125" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/activity_add_post.xml" value="0.25416666666666665" />
-        <entry key="..\:/TravelBee/app/src/main/res/layout/activity_chat.xml" value="0.25416666666666665" />
+        <entry key="..\:/TravelBee/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/activity_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />

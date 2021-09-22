@@ -76,6 +76,7 @@
     <string name="edit_subtitle">edit_subtitle</string>
     <string name="tv_desc">tv_desc</string>
     <string name="edit_desc">edit_desc</string>
+    <string name="fab_content_desc" />
 
     //sandani
     <string-array name="items">
