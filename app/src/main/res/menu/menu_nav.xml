@@ -5,18 +5,13 @@
     <item android:id="@+id/nav_home"
         android:title="@string/home"
         android:icon="@drawable/ic_home_black"/>
-    <item android:id="@+id/nav_users"
-        android:title="@string/musers"
-        android:icon="@drawable/ic_users_white"/>
     <item android:id="@+id/nav_profile"
         android:title="@string/profile"
         android:icon="@drawable/ic_profile_black"/>
-    <item android:id="@+id/nav_wallet"
-        android:title="@string/wallet"
-        android:icon="@drawable/ic_wallet_black"/>
-    <item android:id="@+id/nav_todo"
-        android:title="@string/to_do"
-        android:icon="@drawable/ic_todo_black"/>
+    <item android:id="@+id/nav_users"
+        android:title="@string/musers"
+        android:icon="@drawable/ic_users_white"/>
+
 
 
 

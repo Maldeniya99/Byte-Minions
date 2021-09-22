@@ -76,20 +76,6 @@ public class DashboardActivity extends AppCompatActivity {
                     ft2.replace(R.id.content, fragment2, "");
                     ft2.commit();
                     return true;
-                case R.id.nav_wallet:
-                    actionBar.setTitle("Wallet");
-                    WalletFragment fragment3 = new WalletFragment();
-                    FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
-                    ft3.replace(R.id.content, fragment3, "");
-                    ft3.commit();
-                    return true;
-                case R.id.nav_todo:
-                    actionBar.setTitle("To-Do");
-                    TodoFragment fragment4 = new TodoFragment  ();
-                    FragmentTransaction ft4 = getSupportFragmentManager().beginTransaction();
-                    ft4.replace(R.id.content, fragment4, "");
-                    ft4.commit();
-                    return true;
                 case R.id.nav_users:
                     actionBar.setTitle("Users");
                     UsersFragment fragment5 = new UsersFragment  ();
