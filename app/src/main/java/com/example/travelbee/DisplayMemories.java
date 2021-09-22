@@ -3,16 +3,17 @@ package com.example.travelbee;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.travelbee.adapters.Adapter;
 import com.example.travelbee.models.Memories;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,7 +28,7 @@ public class DisplayMemories extends AppCompatActivity {
     Adapter adapter;
     ArrayList<Memories> items;
     DatabaseReference reference;
-    ImageView add;
+    FloatingActionButton fab;
 
     String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -36,10 +37,17 @@ public class DisplayMemories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_memories);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("My Memories");
+
+        //enable back button
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        add = findViewById(R.id.img_add);
+        fab = findViewById(R.id.floating_action_button);
         items = new ArrayList<Memories>();
 
         reference = FirebaseDatabase.getInstance().getReference("Users").child(currentuser).child("Memories");
@@ -63,12 +71,34 @@ public class DisplayMemories extends AppCompatActivity {
             }
         });
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DisplayMemories.this, CreateMemory.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+    }
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();//go previous activity
+        return super.onSupportNavigateUp();
     }
 
-
-
-    public void onClick(View view){
-        Intent intent = new Intent(DisplayMemories.this, CreateMemory.class);
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(DisplayMemories.this, DashboardActivity.class);
         startActivity(intent);
     }
+
+
+
+//    public void onClick(View view){
+//        Intent intent = new Intent(DisplayMemories.this, CreateMemory.class);
+//        startActivity(intent);
+//    }
+
 }
