@@ -3,6 +3,7 @@ package com.example.travelbee;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,9 +26,11 @@ public class DistanceCalculator extends AppCompatActivity {
 
     EditText etSource , etDestination;
     TextView tvDistance;
+    Button btn;
     String sType;
     double lat1 = 0, long1 = 0, lat2 = 0, long2 = 0;
     int flag = 0;
+    double distance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,10 @@ public class DistanceCalculator extends AppCompatActivity {
         etSource = findViewById(R.id.et_source);
         etDestination = findViewById(R.id.et_destLocation);
         tvDistance = findViewById(R.id.tv_calculatedDistance);
+        btn = findViewById(R.id.btn_calculate);
 
         //Initialize places
-        Places.initialize(getApplicationContext(), "AIzaSyATvKHX-XmskX9-E__DQUU0vURwx9b137Q");
+        Places.initialize(getApplicationContext(), "AIzaSyBK7Cz7Wv1KIADfubHxF3hnlXj8QVurTW8");
 
         //Set edit text non focusable
         etSource.setFocusable(false);
@@ -88,6 +92,14 @@ public class DistanceCalculator extends AppCompatActivity {
         //set text on text view
         tvDistance.setText("0.0 Kilometers");
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tvDistance.setText(String.format(Locale.US, "%2f Kilometers", distance));
+            }
+        });
+
+
     }
     @Override
    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
@@ -106,7 +118,7 @@ public class DistanceCalculator extends AppCompatActivity {
                 etSource.setText(place.getAddress());
                 //Get latitude and longitude
                 String sSource = String.valueOf(place.getLatLng());
-                sSource = sSource.replaceAll("lat/lng", "");
+                sSource = sSource.replaceAll("lat/lng:", "");
                 sSource = sSource.replace("(", "");
                 sSource = sSource.replace(")", "");
                 String [] split = sSource.split(",");
@@ -120,7 +132,7 @@ public class DistanceCalculator extends AppCompatActivity {
                 etDestination.setText(place.getAddress());
                 //Get latitude and longitude
                 String sDestination = String.valueOf(place.getLatLng());
-                sDestination = sDestination.replaceAll("lat/lng", "");
+                sDestination = sDestination.replaceAll("lat/lng:", "");
                 sDestination = sDestination.replace("(", "");
                 sDestination = sDestination.replace(")", "");
                 String [] split = sDestination.split(",");
@@ -142,12 +154,11 @@ public class DistanceCalculator extends AppCompatActivity {
         }
     }
 
-
-    private void distance(double lat1, double long1, double lat2, double long2) {
+    public void distance(double lat1, double long1, double lat2, double long2) {
         //Calculate longitude difference
         double longDiff = long1 - long2;
         //Calculate distance
-        double distance = Math.sin(deg2rad(lat1))
+        distance = Math.sin(deg2rad(lat1))
                 * Math.sin(deg2rad(lat2))
                 + Math.cos(deg2rad(lat1))
                 * Math.cos(deg2rad(lat2))
@@ -160,7 +171,7 @@ public class DistanceCalculator extends AppCompatActivity {
         //Distance in kilometers
         distance = distance * 1.609344;
         //Set distance on text view
-        tvDistance.setText(String.format(Locale.US, "%2f Kilometers", distance));
+
     }
 
     private double rad2deg(double distance) {
