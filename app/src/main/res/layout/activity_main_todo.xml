@@ -8,12 +8,12 @@
     android:padding="15dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="116dp"
         android:layout_marginBottom="20dp"
         android:scaleType="fitXY"
+        android:src="@drawable/beem"
         />
 
     <TextView
@@ -21,55 +21,82 @@
         android:layout_width="382dp"
         android:layout_height="25dp"
         android:layout_marginBottom="10dp"
+        android:fontFamily="@font/allerta"
         android:hint="@string/tv_title"
+
         android:text="WHAT'S YOUR PLAN?"
-
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/todo_Title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <EditText
-        android:id="@+id/edit_title"
-        android:layout_width="311dp"
-        android:layout_height="41dp"
-        android:layout_gravity="center"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_title"
 
-        android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
-        android:hint="@string/edit_title" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:layout_width="379dp"
-        android:textColor="@color/black"
         android:layout_height="25dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/allerta"
         android:hint="@string/tv_subtitle"
+        android:text="WHEN IS IT?"
         android:textAlignment="center"
-        android:text="WHEN IS IT?"  android:layout_marginBottom="10dp"/>
-
-    <EditText
-        android:id="@+id/edit_subtitle"
-        android:layout_width="308dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextField2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:hint="@string/todo_SubTitle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        android:layout_marginBottom="20dp"
-        android:hint="@string/edit_subtitle" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_subtitle"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_width="383dp"
-        android:textColor="@color/black"
-        android:textAlignment="center"
         android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/allerta"
         android:hint="@string/tv_desc"
         android:text="DESCRIPTION"
-        android:layout_marginBottom="10dp"/>
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/edit_desc"
-        android:layout_width="308dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextField3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:hint="@string/edit_desc" />
+        android:hint="@string/Description"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_desc"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="259dp"
@@ -78,11 +105,11 @@
 
         <Button
             android:id="@+id/btn_submit"
-            android:layout_width="170dp"
+            android:layout_width="154dp"
             android:layout_height="match_parent"
             android:layout_gravity="left"
 
-            android:background="@color/white"
+            android:background="@color/layouts"
             android:backgroundTint="@color/teal_700"
             android:text="Task Add"
 
@@ -94,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginRight="5dp"
-           
+
             android:backgroundTint="#00BCD4"
             android:text="ToDos"
             android:textColor="@color/white" />
