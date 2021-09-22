@@ -41,6 +41,10 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
+
+        //methanindaa??
+        <activity android:name=".BudgetActivity"
+            android:exported="true" />
         <activity
             android:name=".DashboardActivity"
             android:exported="true"/>
@@ -59,6 +63,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
 
         <meta-data
             android:name="preloaded_fonts"
