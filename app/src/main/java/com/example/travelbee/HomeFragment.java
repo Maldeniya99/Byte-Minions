@@ -63,6 +63,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), DistanceCalculator.class);
+                startActivity(intent);
+            }
+        });
+
        return view;
     }
 
