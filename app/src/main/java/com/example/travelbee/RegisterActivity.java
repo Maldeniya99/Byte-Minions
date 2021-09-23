@@ -1,10 +1,6 @@
 package com.example.travelbee;
 
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -125,6 +125,7 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("phone","");
                             hashMap.put("image","");
                             hashMap.put("cover","");
+                            hashMap.put("About Me", "");
 
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             //path to store user data named "Users"

@@ -13,4 +13,8 @@
     <color name="layouts">#001a66</color>
     <color name="inputFields">#f5f4f6</color>
     <color name="buttons">#001a66</color>
+    <color name="grey">#E9EAEE</color>
+    <color name="blue">#293859</color>
+    <color name="lightgrey">#EEEEEE</color>
+    <color name="goodgrey">#535353</color>
 </resources>
