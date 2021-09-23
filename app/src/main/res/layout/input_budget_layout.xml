@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:text="cancel"
                     android:textAllCaps="false"
-                    android:textColor="#000"
+                    android:textColor="#fff"
                     android:textStyle="bold"
                     android:layout_margin="2dp"
                     />
