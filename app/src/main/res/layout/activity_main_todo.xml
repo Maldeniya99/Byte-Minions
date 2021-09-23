@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
+    android:background="@drawable/eee"
     android:orientation="vertical"
     tools:context=".MainActivity">
     <ImageView
@@ -51,10 +52,11 @@
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/allerta"
         android:hint="@string/tv_subtitle"
-        android:text="WHEN IS IT?"
+        android:text="TASK?"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextField2"
         android:layout_width="match_parent"
@@ -64,6 +66,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_subtitle"
+
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,6 +104,7 @@
     <LinearLayout
         android:layout_width="259dp"
         android:layout_height="52dp"
+        android:layout_marginTop="25dp"
         android:layout_gravity="center">
 
         <Button
@@ -112,6 +116,7 @@
             android:background="@color/layouts"
             android:backgroundTint="@color/teal_700"
             android:text="Task Add"
+            android:layout_marginRight="10dp"
 
             android:textColor="#000" />
 
