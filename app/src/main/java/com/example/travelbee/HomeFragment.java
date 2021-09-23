@@ -71,7 +71,13 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+        weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), WeatherActivity.class);
+                startActivity(intent);
+            }
+        });
         todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

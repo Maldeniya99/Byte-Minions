@@ -20,6 +20,9 @@
             android:name=".CurrencyActvity"
             android:exported="true"/>
         <activity
+            android:name=".WeatherActivity"
+            android:exported="true"/>
+        <activity
             android:name=".CreateMemory"
             android:exported="true" />
         <activity
