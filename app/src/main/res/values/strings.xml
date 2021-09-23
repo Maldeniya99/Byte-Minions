@@ -71,13 +71,20 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="fab_content_desc" />
+
+    //manushi
+    <string name="todo_Title">Plan</string>
+    <string name="todo_SubTitle">subtitle</string>
+    <string name="Description">todo_Description</string>
     <string name="edit_title">edit_title</string>
     <string name="tv_subtitle">tv_subtitle</string>
     <string name="edit_subtitle">edit_subtitle</string>
     <string name="tv_desc">tv_desc</string>
     <string name="edit_desc">edit_desc</string>
-    <string name="fab_content_desc" />
-
+    <string name="btn_celcius">Celcius</string>
+    <string name="btn_fahrenhite">Fahrenhite</string>
+    <string name="btn_temp">Calculate</string>
     //sandani
     <string-array name="items">
         <item>select item</item>

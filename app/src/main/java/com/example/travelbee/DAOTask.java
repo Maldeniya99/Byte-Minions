@@ -2,6 +2,7 @@ package com.example.travelbee;
 
 import com.example.travelbee.models.ToDo;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -17,7 +18,9 @@ public class DAOTask {
 
 
         FirebaseDatabase db =FirebaseDatabase.getInstance();
-        databaseReference =db.getReference(ToDo.class.getSimpleName());
+      //  databaseReference =db.getReference(ToDo.class.getSimpleName());
+        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        databaseReference =db.getReference("Users").child(currentuser).child(ToDo.class.getSimpleName());
     }
     public Task<Void> add(ToDo todo){
 

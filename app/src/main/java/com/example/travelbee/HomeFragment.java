@@ -24,7 +24,7 @@ public class HomeFragment extends Fragment {
 
 
     FirebaseAuth firebaseAuth;
-    ImageView memories, compass, wallet, todo, weather, converter;
+    ImageView memories, compass, wallet, todo, weather, converter, temperature, distance;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -45,7 +45,9 @@ public class HomeFragment extends Fragment {
         wallet = view.findViewById(R.id.iv_wallet);
         todo = view.findViewById(R.id.iv_todo);
         weather = view.findViewById(R.id.iv_weather);
-        converter = view.findViewById(R.id.iv_converter);
+        converter = view.findViewById(R.id.iv_currency);
+        temperature = view.findViewById(R.id.iv_temperature);
+        distance = view.findViewById(R.id.iv_distance);
 
         memories.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +65,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        weather.setOnClickListener(new View.OnClickListener() {
+        distance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), DistanceCalculator.class);
@@ -75,6 +77,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), BudgetActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        temperature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), TemperatureCalculator.class);
                 startActivity(intent);
             }
         });
