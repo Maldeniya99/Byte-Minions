@@ -57,6 +57,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        compass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), CompassActivity.class);
+                startActivity(intent);
+            }
+        });
+
         todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

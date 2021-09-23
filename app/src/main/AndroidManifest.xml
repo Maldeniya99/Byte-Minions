@@ -48,6 +48,9 @@
             android:name=".BudgetActivity"
             android:exported="true" />
         <activity
+            android:name=".CompassActivity"
+            android:exported="true" />
+        <activity
             android:name=".DashboardActivity"
             android:exported="true" />
         <activity

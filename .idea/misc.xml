@@ -8,14 +8,9 @@
         <entry key="..\:/Byte-Minions/app/src/main/res/layout/activity_rvactivity.xml" value="0.203125" />
         <entry key="..\:/Byte-Minions/app/src/main/res/layout/layout_item.xml" value="0.203125" />
         <entry key="..\:/Byte-Minions/app/src/main/res/menu/option_menu.xml" value="0.2708333333333333" />
-        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-anydpi/ic_email.xml" value="0.14692982456140352" />
-        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-anydpi/ic_phone.xml" value="0.22456140350877193" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-hdpi/light_blue_gradient.xml" value="0.1" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-mdpi/ic_menu.xml" value="0.12037037037037036" />
-        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-v24/circular_grey_bordersolid.xml" value="0.22456140350877193" />
-        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-v24/circularbordersolid.xml" value="0.22456140350877193" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/backarrow.xml" value="0.13333333333333333" />
-        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/ic_call_24dp.xml" value="0.22456140350877193" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/ic_plus_24.xml" value="0.26666666666666666" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/shape.xml" value="0.19322916666666667" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/white_light_blue.xml" value="0.26666666666666666" />
@@ -41,7 +36,7 @@
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_blogs.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_chat_list.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_home.xml" value="0.264" />
-        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_profile.xml" value="0.2970969734403953" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_todo.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_users.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_wallet.xml" value="0.25416666666666665" />
@@ -80,6 +75,7 @@
         <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_house.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_transport.xml" value="0.14074074074074075" />
         <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/activity_budget.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/activity_compass.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/input_budget_layout.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/retrieve_budget.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/update_budget.xml" value="0.1" />
