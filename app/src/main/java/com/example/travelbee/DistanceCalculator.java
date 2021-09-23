@@ -39,10 +39,10 @@ public class DistanceCalculator extends AppCompatActivity {
         getSupportActionBar().hide();
 
         //Assign variable
-        etSource = findViewById(R.id.et_source);
+        etSource = findViewById(R.id.et_temp);
         etDestination = findViewById(R.id.et_destLocation);
-        tvDistance = findViewById(R.id.tv_calculatedDistance);
-        btn = findViewById(R.id.btn_calculate);
+        tvDistance = findViewById(R.id.tv_calculatedTemp);
+        btn = findViewById(R.id.btn_temp);
 
         //Initialize places
         Places.initialize(getApplicationContext(), "AIzaSyBK7Cz7Wv1KIADfubHxF3hnlXj8QVurTW8");
