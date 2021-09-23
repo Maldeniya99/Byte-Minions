@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -72,6 +73,7 @@ public class ProfileFragment extends Fragment {
     CircleImageView avatarIv;
     TextView nameTv, emailTv, phoneTv, descriptionTv;
     FloatingActionButton fab;
+    Button btn_note;
 
     //progress dialog
     ProgressDialog pd;
@@ -120,6 +122,7 @@ public class ProfileFragment extends Fragment {
         phoneTv = view.findViewById(R.id.phoneTv);
         fab = view.findViewById(R.id.fab);
         descriptionTv = view.findViewById(R.id.description_tv);
+        btn_note = view.findViewById(R.id.btn_notes);
 
         //init progress dialog
         pd = new ProgressDialog(getActivity());
@@ -175,6 +178,14 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 showEditProfileDialog();
+            }
+        });
+
+        btn_note.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), notesActivity.class);
+                startActivity(i);
             }
         });
 
