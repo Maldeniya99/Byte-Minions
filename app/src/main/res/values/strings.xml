@@ -85,6 +85,18 @@
     <string name="btn_celcius">Celcius</string>
     <string name="btn_fahrenhite">Fahrenhite</string>
     <string name="btn_temp">Calculate</string>
+    <string name="camount">currency amount</string>
+    <string name="txtCity" />
+    <string name="txtTime" />
+    <string name="txtValue" />
+    <string name="txtTitleFeelLike" />
+    <string name="txtValueFeelLike" />
+    <string name="txtTitleHumididty" />
+    <string name="txtValueHumididty" />
+    <string name="txtTitleVision" />
+    <string name="txtValueVision" />
+    <string name="YourCity" />
+    <string name="btn_download" />
     //sandani
     <string-array name="items">
         <item>select item</item>
@@ -93,6 +105,8 @@
         <item>Entertainment</item>
         <item>Other</item>
     </string-array>
+
+
 
 
 </resources>

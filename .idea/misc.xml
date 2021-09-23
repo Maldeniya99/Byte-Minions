@@ -35,7 +35,7 @@
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_blogs.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_chat_list.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_home.xml" value="0.264" />
-        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_todo.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_users.xml" value="0.25416666666666665" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/fragment_wallet.xml" value="0.25416666666666665" />
@@ -74,7 +74,27 @@
         <entry key="..\:/TravelBee/app/src/main/res/layout/row_users.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/menu/menu_nav.xml" value="0.25416666666666665" />
+
         <entry key="..\:/TravelBee/app/src/main/res/menu/menu_note.xml" value="0.21041666666666667" />
+
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_add.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_entertainment.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_food.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_house.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_transport.xml" value="0.14074074074074075" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/activity_budget.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/activity_compass.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/input_budget_layout.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/retrieve_budget.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/layout/update_budget.xml" value="0.1" />
+        <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/activity_create_memory.xml" value="0.2708333333333333" />
+        <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/activity_currency.xml" value="0.1" />
+        <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/activity_main_todo.xml" value="0.4" />
+        <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/activity_rvactivity.xml" value="0.26666666666666666" />
+        <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/activity_weather.xml" value="0.19739583333333333" />
+        <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/item.xml" value="0.26666666666666666" />
+        <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/layout_item.xml" value="0.21979166666666666" />
+
       </map>
     </option>
   </component>

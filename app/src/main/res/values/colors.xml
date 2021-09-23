@@ -15,6 +15,7 @@
     <color name="buttons">#001a66</color>
 
 
+
     <color name="gray">#cdc9c3</color>
     <color name="green">#c6ebc9</color>
     <color name="lightgreen">#cfffa5</color>
@@ -25,5 +26,11 @@
     <color name="color3">#ccf6c8</color>
     <color name="color4">#ffe0ac</color>
     <color name="color5">#e5cfe5</color>
+
+
+    <color name="grey">#E9EAEE</color>
+    <color name="blue">#293859</color>
+    <color name="lightgrey">#EEEEEE</color>
+    <color name="goodgrey">#535353</color>
 
 </resources>

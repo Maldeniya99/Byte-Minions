@@ -32,6 +32,12 @@
             android:name=".TemperatureCalculator"
             android:exported="true" />
         <activity
+            android:name=".CurrencyActvity"
+            android:exported="true"/>
+        <activity
+            android:name=".WeatherActivity"
+            android:exported="true"/>
+        <activity
             android:name=".CreateMemory"
             android:exported="true" />
         <activity
@@ -61,6 +67,9 @@
             android:exported="true" />
         <activity
             android:name=".BudgetActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CompassActivity"
             android:exported="true" />
         <activity
             android:name=".DashboardActivity"
