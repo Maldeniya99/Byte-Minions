@@ -49,6 +49,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -66,8 +68,9 @@ public class ProfileFragment extends Fragment {
 
 
     //views from xml
-    ImageView avatarIv, coverIv;
-    TextView nameTv, emailTv, phoneTv;
+    ImageView coverIv;
+    CircleImageView avatarIv;
+    TextView nameTv, emailTv, phoneTv, descriptionTv;
     FloatingActionButton fab;
 
     //progress dialog
@@ -116,6 +119,7 @@ public class ProfileFragment extends Fragment {
         emailTv = view.findViewById(R.id.emailTv);
         phoneTv = view.findViewById(R.id.phoneTv);
         fab = view.findViewById(R.id.fab);
+        descriptionTv = view.findViewById(R.id.description_tv);
 
         //init progress dialog
         pd = new ProgressDialog(getActivity());
@@ -133,11 +137,12 @@ public class ProfileFragment extends Fragment {
                     String phone = ""+ ds.child("phone").getValue();
                     String image = ""+ ds.child("image").getValue();
                     String cover = ""+ ds.child("cover").getValue();
-
+                    String aboutMe = "" + ds.child("About Me").getValue();
                     //set data
                     nameTv.setText(name);
                     emailTv.setText(email);
                     phoneTv.setText(phone);
+                    descriptionTv.setText(aboutMe);
                     try {
                         //if image is received then set
                         Picasso.get().load(image).into(avatarIv);
@@ -208,7 +213,7 @@ public class ProfileFragment extends Fragment {
         //show dialog containing options
 
         //options to show in dialog
-        String options[] = {"Edit Profile Picture", "Edit Cover Photo", "Edit Name", "Edit Phone"};
+        String options[] = {"Edit Profile Picture", "Edit Cover Photo", "Edit Name", "Edit Phone", "Edit About Me"};
         //alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         //set title
@@ -238,6 +243,10 @@ public class ProfileFragment extends Fragment {
                     pd.setMessage("Updating Phone");
                     showNamePhoneUpdateDialog("phone");
 
+                }else if(which == 4){
+                    //edit description
+                    pd.setMessage("Updating About Me");
+                    showNamePhoneUpdateDialog("About Me");
                 }
             }
         });
