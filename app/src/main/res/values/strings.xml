@@ -82,6 +82,9 @@
     <string name="edit_subtitle">edit_subtitle</string>
     <string name="tv_desc">tv_desc</string>
     <string name="edit_desc">edit_desc</string>
+    <string name="btn_celcius">Celcius</string>
+    <string name="btn_fahrenhite">Fahrenhite</string>
+    <string name="btn_temp">Calculate</string>
     //sandani
     <string-array name="items">
         <item>select item</item>
