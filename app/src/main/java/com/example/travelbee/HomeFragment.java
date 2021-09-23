@@ -64,6 +64,13 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+       converter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), CurrencyActvity.class);
+                startActivity(intent);
+            }
+        });
 
         todo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +102,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), TemperatureCalculator.class);
                 startActivity(intent);
             }
+
         });
 
        return view;

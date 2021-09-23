@@ -17,6 +17,9 @@
             android:name=".TemperatureCalculator"
             android:exported="true" />
         <activity
+            android:name=".CurrencyActvity"
+            android:exported="true"/>
+        <activity
             android:name=".CreateMemory"
             android:exported="true" />
         <activity

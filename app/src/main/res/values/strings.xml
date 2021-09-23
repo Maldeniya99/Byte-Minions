@@ -85,6 +85,7 @@
     <string name="btn_celcius">Celcius</string>
     <string name="btn_fahrenhite">Fahrenhite</string>
     <string name="btn_temp">Calculate</string>
+    <string name="camount">currency amount</string>
     //sandani
     <string-array name="items">
         <item>select item</item>
