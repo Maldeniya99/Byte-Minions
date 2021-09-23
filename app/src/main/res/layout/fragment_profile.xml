@@ -26,7 +26,7 @@
     <LinearLayout
         android:id="@+id/topbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="83dp"
         android:layout_alignParentTop="true"
         android:gravity="center_vertical"
         android:padding="16dp">
@@ -71,6 +71,7 @@
             android:paddingRight="20dp">
 
             <!--Top Profile Section -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -292,17 +293,27 @@
                                 android:textSize="15sp" />
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:paddingRight="8dp">
+
+                            <Button
+                                android:id="@+id/btn_notes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#0288d1"
+                                android:text="My Notes"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
 
                     </LinearLayout>
                 </LinearLayout>
 
-                <!--Skills Details-->
             </LinearLayout>
-
-            <!--Experience Bottom Cards-->
-
-            <!--Review Bottom Cards-->
-
         </LinearLayout>
     </ScrollView>
 
