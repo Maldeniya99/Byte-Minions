@@ -1,11 +1,6 @@
 package com.example.travelbee;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,11 +15,18 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
 import com.example.travelbee.models.firebasemodel;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -138,23 +140,38 @@ public class notesActivity extends AppCompatActivity {
                         popupMenu.getMenu().add("Delete").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                             @Override
                             public boolean onMenuItemClick(MenuItem menuItem) {
-
-
                                 DocumentReference documentReference = firebaseFirestore.collection("notes")
                                         .document(firebaseUser.getUid()).collection("myNotes").document(docId);
 
-                                documentReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(notesActivity.this);
+                                builder.setTitle("Delete");
+                                builder.setMessage("Are you sure you want to delete this?");
+                                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                                     @Override
-                                    public void onSuccess(Void unused) {
-                                        Toast.makeText(view.getContext(), "This note is deleted", Toast.LENGTH_SHORT).show();
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(view.getContext(), "Failed To Delete", Toast.LENGTH_SHORT).show();
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        documentReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                Toast.makeText(view.getContext(), "This note is deleted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(view.getContext(), "Failed To Delete", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+
                                     }
                                 });
 
+                                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Toast.makeText(notesActivity.this.getApplicationContext(), "Cancelled.", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
+                                builder.show();
                                 return false;
                             }
                         });
