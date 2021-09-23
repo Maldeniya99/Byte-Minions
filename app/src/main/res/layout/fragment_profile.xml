@@ -31,11 +31,11 @@
         android:gravity="center_vertical"
         android:padding="16dp">
 
-<!--        <ImageView-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:padding="10dp"-->
-<!--            android:src="@drawable/ic_arrow_back_24dp" />-->
+        <!--        <ImageView-->
+        <!--            android:layout_width="40dp"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:padding="10dp"-->
+        <!--            android:src="@drawable/ic_arrow_back_24dp" />-->
 
         <Space
             android:layout_width="wrap_content"
@@ -142,7 +142,7 @@
                     android:padding="13dp"
                     android:text="User Info"
                     android:textAllCaps="true"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/colorWhite"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -187,6 +187,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/proximanovaregular"
                                 android:text="About Me"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="17sp"
                                 android:textStyle="bold" />
 
@@ -202,7 +203,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:hint="If you like you can add about me section" />
+                            android:hint="If you like you can add about me section"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/grey" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -225,6 +228,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/proximanovaregular"
                             android:text="Contact Details"
+                            android:textColor="@color/colorWhite"
                             android:textSize="17sp"
                             android:textStyle="bold" />
 
@@ -260,7 +264,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:fontFamily="@font/proximanovaregular"
-                                android:textColor="@color/goodgrey"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="15sp" />
                         </LinearLayout>
 
@@ -284,7 +288,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:fontFamily="@font/proximanovaregular"
-                                android:textColor="@color/goodgrey"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="15sp" />
                         </LinearLayout>
 
@@ -319,11 +323,3 @@
 
 
 </RelativeLayout>
-
-
-
-
-
-
-
-
