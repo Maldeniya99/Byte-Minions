@@ -67,7 +67,7 @@ public class MainTODOActivity extends AppCompatActivity {
                  hashMap.put("desc",edit_desc.getText().toString());
 
              dao.update(todo_edit.getKey(),hashMap).addOnSuccessListener(suc->{
-                 Toast.makeText(this,"up date", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(this,"update Successfully", Toast.LENGTH_SHORT).show();
                  finish();
              }).addOnFailureListener(er->{
                  Toast.makeText(this,""+er.getMessage(), Toast.LENGTH_SHORT).show();
