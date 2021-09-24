@@ -25,18 +25,17 @@ public class MainTODOActivity extends AppCompatActivity {
 
        final  EditText edit_title =findViewById(R.id.edit_title);
        final EditText edit_subtitle =findViewById(R.id.edit_subtitle);
-      final  EditText edit_desc =findViewById(R.id.edit_desc);
+       final  EditText edit_desc =findViewById(R.id.edit_desc);
 
-        Button  btn_submit = findViewById(R.id.btn_submit);
-        Button btn_open = findViewById(R.id.btn_open);
-        btn_open.setOnClickListener(v->{
+            Button  btn_submit = findViewById(R.id.btn_submit);
+            Button btn_open = findViewById(R.id.btn_open);
+            btn_open.setOnClickListener(v->{
             Intent intent = new Intent(MainTODOActivity.this,RVActivity.class);
             startActivity(intent);
         });
         DAOTask dao = new DAOTask();
 
        ToDo todo_edit=(ToDo) getIntent().getSerializableExtra("EDIT");
-
        if(todo_edit != null){
 
            btn_submit.setText("Update");
@@ -44,36 +43,28 @@ public class MainTODOActivity extends AppCompatActivity {
            edit_subtitle.setText(todo_edit.getSubtitle());
            edit_desc.setText(todo_edit.getDesc());
            btn_open.setVisibility(View.GONE);
-
-
        }else {
-
            btn_submit.setVisibility(View.VISIBLE);
        }
-
         btn_submit.setOnClickListener(v->{
-
          ToDo todo =new ToDo(edit_title.getText().toString(),edit_subtitle.getText().toString(),edit_desc.getText().toString());
+
          if(todo_edit==null) {
              dao.add(todo).addOnSuccessListener(suc->{
-//
-
 
                  Toast.makeText(this,"created successfully", Toast.LENGTH_SHORT).show();
 
-
              }).addOnFailureListener(er->{
-
 
                  Toast.makeText(this,""+er.getMessage(), Toast.LENGTH_SHORT).show();
              });
 
          }else{
 
-             HashMap<String,Object> hashMap= new HashMap<>();
-             hashMap.put("title",edit_title.getText().toString());
-             hashMap.put("subtitle",edit_subtitle.getText().toString());
-             hashMap.put("desc",edit_desc.getText().toString());
+                 HashMap<String,Object> hashMap= new HashMap<>();
+                 hashMap.put("title",edit_title.getText().toString());
+                 hashMap.put("subtitle",edit_subtitle.getText().toString());
+                 hashMap.put("desc",edit_desc.getText().toString());
 
              dao.update(todo_edit.getKey(),hashMap).addOnSuccessListener(suc->{
                  Toast.makeText(this,"up date", Toast.LENGTH_SHORT).show();

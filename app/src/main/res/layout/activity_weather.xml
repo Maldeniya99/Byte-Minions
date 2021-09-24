@@ -12,6 +12,7 @@
     <RelativeLayout
         android:id="@+id/rlWeather"
         android:layout_width="377dp"
+        android:background="@color/teal_700"
         android:layout_height="764dp"
 
 
@@ -20,6 +21,8 @@
 
         <RelativeLayout
             android:id="@+id/rlMain"
+            android:background="@color/teal_700"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
