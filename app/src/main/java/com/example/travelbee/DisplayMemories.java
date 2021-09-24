@@ -89,15 +89,6 @@ public class DisplayMemories extends AppCompatActivity {
         return super.onSupportNavigateUp();
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode== KeyEvent.KEYCODE_BACK) {
-            return false;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-
 
 //    public void onClick(View view){
 //        Intent intent = new Intent(DisplayMemories.this, CreateMemory.class);
