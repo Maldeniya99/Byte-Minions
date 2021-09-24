@@ -91,4 +91,15 @@
         android:text="@string/not_have_account_register"
         android:textAlignment="center"
         android:textColor="@color/colorBlack" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="257dp"
+        android:layout_height="164dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="106dp"
+        app:srcCompat="@drawable/logo" />
 </RelativeLayout>
