@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.travelbee.DashboardActivity;
 import com.example.travelbee.DisplayMemories;
 import com.example.travelbee.MemoryPage;
 import com.example.travelbee.R;
@@ -109,7 +110,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
                                     StorageReference storageReference = firebaseStorage.getReferenceFromUrl(getImage);
                                     storageReference.delete();
 
-                                    Intent a = new Intent(context, DisplayMemories.class);
+                                    Intent a = new Intent(context, DashboardActivity.class);
                                     Toast.makeText(context.getApplicationContext(), "Deleted", Toast.LENGTH_SHORT).show();
                                     context.startActivity(a);
                                 }
