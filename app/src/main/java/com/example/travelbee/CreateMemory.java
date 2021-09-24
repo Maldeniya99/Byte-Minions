@@ -6,6 +6,7 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
@@ -17,6 +18,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -52,12 +54,19 @@ public class CreateMemory extends AppCompatActivity implements DatePickerDialog.
     DatabaseReference db;
     StorageReference storage = FirebaseStorage.getInstance().getReference();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_memory);
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Create a Memory");
+
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         image = findViewById(R.id.iv_upload);
         date = findViewById(R.id.et_date);
@@ -90,7 +99,21 @@ public class CreateMemory extends AppCompatActivity implements DatePickerDialog.
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InsertToDB();
+                if(TextUtils.isEmpty(date.getText().toString())){
+                    date.setError("Date is required");
+                }
+                if(TextUtils.isEmpty(description.getText().toString())){
+                    description.setError("Description is required");
+                }
+                if(TextUtils.isEmpty(location.getText().toString())){
+                    location.setError("Location is required");
+                }
+                if(TextUtils.isEmpty(title.getText().toString())){
+                    title.setError("Title is required");
+                }
+                else {
+                    InsertToDB();
+                }
             }
 
             private void InsertToDB() {
@@ -106,16 +129,17 @@ public class CreateMemory extends AppCompatActivity implements DatePickerDialog.
                                     db.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            snapshot.getRef().child("date").setValue(date.getText().toString());
-                                            snapshot.getRef().child("description").setValue(description.getText().toString());
-                                            snapshot.getRef().child("imageUrl").setValue(uri.toString());
-                                            snapshot.getRef().child("keyMemories").setValue(keyMemory);
-                                            snapshot.getRef().child("location").setValue(location.getText().toString());
-                                            snapshot.getRef().child("title").setValue(title.getText().toString());
+                                                snapshot.getRef().child("date").setValue(date.getText().toString());
+                                                snapshot.getRef().child("description").setValue(description.getText().toString());
+                                                snapshot.getRef().child("imageUrl").setValue(uri.toString());
+                                                snapshot.getRef().child("keyMemories").setValue(keyMemory);
+                                                snapshot.getRef().child("location").setValue(location.getText().toString());
+                                                snapshot.getRef().child("title").setValue(title.getText().toString());
 
-                                            Intent a = new Intent(CreateMemory.this, DisplayMemories.class);
-                                            Toast.makeText(CreateMemory.this, "Memory Created Successfully", Toast.LENGTH_SHORT).show();
-                                            startActivity(a);
+
+                                                Intent a = new Intent(CreateMemory.this, DisplayMemories.class);
+                                                Toast.makeText(CreateMemory.this, "Memory Created Successfully", Toast.LENGTH_SHORT).show();
+                                                startActivity(a);
                                         }
 
                                         @Override
@@ -157,6 +181,12 @@ public class CreateMemory extends AppCompatActivity implements DatePickerDialog.
                     }
                 }
             });
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();//go previous activity
+        return super.onSupportNavigateUp();
+    }
 
 
     @Override
