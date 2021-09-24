@@ -47,33 +47,46 @@ public class MainTODOActivity extends AppCompatActivity {
            btn_submit.setVisibility(View.VISIBLE);
        }
         btn_submit.setOnClickListener(v->{
-         ToDo todo =new ToDo(edit_title.getText().toString(),edit_subtitle.getText().toString(),edit_desc.getText().toString());
 
-         if(todo_edit==null) {
-             dao.add(todo).addOnSuccessListener(suc->{
+            if (TextUtils.isEmpty(edit_title.getText().toString())) {
+                edit_title.setError("Date is required");
+            }
+            if (TextUtils.isEmpty(edit_desc.getText().toString())) {
+                edit_desc.setError("Description is required");
+            }
+            if (TextUtils.isEmpty(edit_subtitle.getText().toString())) {
+                edit_subtitle.setError("Location is required");
+            } else {
 
-                 Toast.makeText(this,"created successfully", Toast.LENGTH_SHORT).show();
+                ToDo todo = new ToDo(edit_title.getText().toString(), edit_subtitle.getText().toString(), edit_desc.getText().toString());
 
-             }).addOnFailureListener(er->{
+                if (todo_edit == null) {
+                    dao.add(todo).addOnSuccessListener(suc -> {
 
-                 Toast.makeText(this,""+er.getMessage(), Toast.LENGTH_SHORT).show();
-             });
+                        Toast.makeText(this, "created successfully", Toast.LENGTH_SHORT).show();
 
-         }else{
+                    }).addOnFailureListener(er -> {
 
-                 HashMap<String,Object> hashMap= new HashMap<>();
-                 hashMap.put("title",edit_title.getText().toString());
-                 hashMap.put("subtitle",edit_subtitle.getText().toString());
-                 hashMap.put("desc",edit_desc.getText().toString());
+                        Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
+                    });
 
-             dao.update(todo_edit.getKey(),hashMap).addOnSuccessListener(suc->{
-                 Toast.makeText(this,"update Successfully", Toast.LENGTH_SHORT).show();
-                 finish();
-             }).addOnFailureListener(er->{
-                 Toast.makeText(this,""+er.getMessage(), Toast.LENGTH_SHORT).show();
-             });
+                } else {
 
-         }
+                    HashMap<String, Object> hashMap = new HashMap<>();
+                    hashMap.put("title", edit_title.getText().toString());
+                    hashMap.put("subtitle", edit_subtitle.getText().toString());
+                    hashMap.put("desc", edit_desc.getText().toString());
+
+                    dao.update(todo_edit.getKey(), hashMap).addOnSuccessListener(suc -> {
+                        Toast.makeText(this, "update Successfully", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }).addOnFailureListener(er -> {
+                        Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
+                    });
+
+                }
+            }
+            //
         });
 
 
