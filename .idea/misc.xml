@@ -53,6 +53,8 @@
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/layout/test.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/drawable-anydpi/ic_edit_black.xml" value="0.2703125" />
         <entry key="..\:/TravelBee/app/src/main/res/drawable-anydpi/ic_edit_white.xml" value="0.2703125" />
+        <entry key="..\:/TravelBee/app/src/main/res/drawable-hdpi/light_blue_gradient.xml" value="0.2703125" />
+        <entry key="..\:/TravelBee/app/src/main/res/drawable/bg_receiver.xml" value="0.2703125" />
         <entry key="..\:/TravelBee/app/src/main/res/drawable/bg_sender.xml" value="0.2703125" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/activity_add_post.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/activity_chat.xml" value="0.25416666666666665" />
@@ -64,6 +66,7 @@
         <entry key="..\:/TravelBee/app/src/main/res/layout/activity_notedetails.xml" value="0.21041666666666667" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/activity_notes.xml" value="0.21041666666666667" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/TravelBee/app/src/main/res/layout/activity_temperature_calculator.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/fragment_blogs.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/fragment_chat_list.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
