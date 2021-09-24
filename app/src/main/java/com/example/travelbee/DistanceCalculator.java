@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.common.api.Status;
@@ -36,13 +37,18 @@ public class DistanceCalculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_distance_calculator);
-        getSupportActionBar().hide();
 
         //Assign variable
         etSource = findViewById(R.id.et_temp);
         etDestination = findViewById(R.id.et_destLocation);
         tvDistance = findViewById(R.id.tv_calculatedTemp);
         btn = findViewById(R.id.btn_temp);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("DistanceCalculator");
+
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         //Initialize places
         Places.initialize(getApplicationContext(), "AIzaSyBK7Cz7Wv1KIADfubHxF3hnlXj8QVurTW8");
@@ -172,6 +178,12 @@ public class DistanceCalculator extends AppCompatActivity {
         distance = distance * 1.609344;
         //Set distance on text view
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();//go previous activity
+        return super.onSupportNavigateUp();
     }
 
     private double rad2deg(double distance) {
