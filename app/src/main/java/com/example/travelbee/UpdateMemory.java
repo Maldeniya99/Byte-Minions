@@ -6,6 +6,7 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -19,6 +20,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
@@ -40,7 +42,7 @@ import java.util.Calendar;
 public class UpdateMemory extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     EditText titleName,locationName,dateView,descriptionView;
-    ImageView imageView, picker, back;
+    ImageView imageView, picker;
     Button update, delete;
 
     Uri imageUri;
@@ -50,12 +52,21 @@ public class UpdateMemory extends AppCompatActivity implements DatePickerDialog.
     String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_memory);
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Update Memory");
+
+        //enable back button
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
         titleName = findViewById(R.id.et_current);
         locationName = findViewById(R.id.et_location);
@@ -65,7 +76,6 @@ public class UpdateMemory extends AppCompatActivity implements DatePickerDialog.
         imageView = findViewById(R.id.iv_upload);
         update = findViewById(R.id.btn_update);
         delete = findViewById(R.id.btn_cancel);
-        back = findViewById(R.id.arrow_back);
 
         Intent i = getIntent();
         String title = i.getStringExtra("title");
@@ -108,45 +118,59 @@ public class UpdateMemory extends AppCompatActivity implements DatePickerDialog.
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(imageUri != null) {
-                    FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
-                    final StorageReference reference1 = firebaseStorage.getReferenceFromUrl(image_url);
+                if(TextUtils.isEmpty(dateView.getText().toString())){
+                    dateView.setError("Date is required");
+                }
+                if(TextUtils.isEmpty(descriptionView.getText().toString())){
+                    descriptionView.setError("Description is required");
+                }
+                if(TextUtils.isEmpty(locationName.getText().toString())){
+                    locationName.setError("Location is required");
+                }
+                if(TextUtils.isEmpty(titleName.getText().toString())){
+                    titleName.setError("Title is required");
+                }
+                else {
+                    if (imageUri != null) {
+                        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+                        final StorageReference reference1 = firebaseStorage.getReferenceFromUrl(image_url);
 
-                    reference1.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            reference1.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                @Override
-                                public void onSuccess(Uri uri) {
-                                    db.addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            snapshot.getRef().child("date").setValue(dateView.getText().toString());
-                                            snapshot.getRef().child("description").setValue(descriptionView.getText().toString());
-                                            snapshot.getRef().child("imageUrl").setValue(uri.toString());
-                                            snapshot.getRef().child("keyMemories").setValue(keykeyMemories);
-                                            snapshot.getRef().child("location").setValue(locationName.getText().toString());
-                                            snapshot.getRef().child("title").setValue(titleName.getText().toString());
-                                            Intent i = new Intent(UpdateMemory.this, DisplayMemories.class);
-                                            Toast.makeText(UpdateMemory.this, "Memory Updated Successfully", Toast.LENGTH_SHORT).show();
-                                            startActivity(i);
-                                        }
+                        reference1.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                reference1.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        db.addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                snapshot.getRef().child("date").setValue(dateView.getText().toString());
+                                                snapshot.getRef().child("description").setValue(descriptionView.getText().toString());
+                                                snapshot.getRef().child("imageUrl").setValue(uri.toString());
+                                                snapshot.getRef().child("keyMemories").setValue(keykeyMemories);
+                                                snapshot.getRef().child("location").setValue(locationName.getText().toString());
+                                                snapshot.getRef().child("title").setValue(titleName.getText().toString());
+                                                Intent i = new Intent(UpdateMemory.this, DisplayMemories.class);
+                                                Toast.makeText(UpdateMemory.this, "Memory Updated Successfully", Toast.LENGTH_SHORT).show();
+                                                startActivity(i);
+                                            }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError error) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError error) {
 
-                                        }
-                                    });
+                                            }
+                                        });
 
-                                }
-                            });
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
+                                    }
+                                });
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
 
-                        }
-                    });
+                            }
+                        });
+                    }
                 }
             }
 
@@ -156,47 +180,6 @@ public class UpdateMemory extends AppCompatActivity implements DatePickerDialog.
                 return mime.getExtensionFromMimeType(cr.getType(imageUri));
             }
         });
-
-//        delete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(UpdateMemory.this);
-//                builder.setTitle("Delete");
-//                builder.setMessage("Are you sure you want to delete this?");
-//                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialogInterface, int i) {
-//                                db.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                    @Override
-//                                    public void onComplete(@NonNull Task<Void> task) {
-//                                        if (task.isSuccessful()) {
-//                                            FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
-//                                            StorageReference storageReference = firebaseStorage.getReferenceFromUrl(image_url);
-//                                            storageReference.delete();
-//
-//                                            Intent a = new Intent(UpdateMemory.this, DisplayMemories.class);
-//                                            Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_SHORT).show();
-//                                            startActivity(a);
-//                                        }
-//                                        Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                });
-//                            }
-//                        });
-//
-//                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        Toast.makeText(getApplicationContext(), "Cancelled.", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//
-//                builder.show();
-//
-//            }
-//        });
-
-
     }
 
     ActivityResultLauncher<String> mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(),
@@ -221,8 +204,9 @@ public class UpdateMemory extends AppCompatActivity implements DatePickerDialog.
     }
 
     public void onClickCancel(View view){
-        Intent intent = new Intent(UpdateMemory.this, DisplayMemories.class);
-        startActivity(intent);
+//        Intent intent = new Intent(UpdateMemory.this, DisplayMemories.class);
+//        startActivity(intent);
+        onBackPressed();//go previous activity
     }
 
     public void hideKeyboard(View view) {
@@ -231,13 +215,8 @@ public class UpdateMemory extends AppCompatActivity implements DatePickerDialog.
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode== KeyEvent.KEYCODE_BACK) {
-            return false;
-        }
-        return super.onKeyDown(keyCode, event);
+    public boolean onSupportNavigateUp(){
+        onBackPressed();//go previous activity
+        return super.onSupportNavigateUp();
     }
-
-
-
 }

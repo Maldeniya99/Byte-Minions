@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
@@ -21,7 +22,13 @@ public class MemoryPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory_page);
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(getIntent().getStringExtra("title"));
+
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
 
         titleName = findViewById(R.id.displayTitle);
         locationName = findViewById(R.id.displayLocation);
@@ -45,6 +52,12 @@ public class MemoryPage extends AppCompatActivity {
         String image_url = i.getStringExtra("image");
         Glide.with(imageView.getContext()).load(image_url).into(imageView);
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();//go previous activity
+        return super.onSupportNavigateUp();
     }
 
 }
