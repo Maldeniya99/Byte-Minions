@@ -8,6 +8,8 @@
         <entry key="..\:/Byte-Minions/app/src/main/res/layout/activity_rvactivity.xml" value="0.203125" />
         <entry key="..\:/Byte-Minions/app/src/main/res/layout/layout_item.xml" value="0.203125" />
         <entry key="..\:/Byte-Minions/app/src/main/res/menu/option_menu.xml" value="0.2708333333333333" />
+        <entry key="..\:/MADPROJECT/Byte-Minions/app/src/main/res/layout/activity_currency.xml" value="0.2708333333333333" />
+        <entry key="..\:/MADPROJECT/Byte-Minions/app/src/main/res/layout/activity_weather.xml" value="0.2708333333333333" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-hdpi/light_blue_gradient.xml" value="0.1" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable-mdpi/ic_menu.xml" value="0.12037037037037036" />
         <entry key="..\:/SLIIT Documents/2nd Year/2nd Semester/MAD/Byte-Minions/app/src/main/res/drawable/backarrow.xml" value="0.13333333333333333" />
@@ -74,9 +76,7 @@
         <entry key="..\:/TravelBee/app/src/main/res/layout/row_users.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
         <entry key="..\:/TravelBee/app/src/main/res/menu/menu_nav.xml" value="0.25416666666666665" />
-
         <entry key="..\:/TravelBee/app/src/main/res/menu/menu_note.xml" value="0.21041666666666667" />
-
         <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_add.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_entertainment.xml" value="0.14722222222222223" />
         <entry key="..\:/Users/ASUS/Desktop/Y2S2/Byte-Minions/app/src/main/res/drawable-v24/ic_food.xml" value="0.14722222222222223" />
@@ -94,7 +94,6 @@
         <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/activity_weather.xml" value="0.19739583333333333" />
         <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/item.xml" value="0.26666666666666666" />
         <entry key="..\:/mad_pro/Byte-Minions/app/src/main/res/layout/layout_item.xml" value="0.21979166666666666" />
-
       </map>
     </option>
   </component>
