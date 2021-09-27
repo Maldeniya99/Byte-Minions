@@ -49,13 +49,13 @@ public class MainTODOActivity extends AppCompatActivity {
         btn_submit.setOnClickListener(v->{
 
             if (TextUtils.isEmpty(edit_title.getText().toString())) {
-                edit_title.setError("Date is required");
+                edit_title.setError("title is required");
             }
             if (TextUtils.isEmpty(edit_desc.getText().toString())) {
                 edit_desc.setError("Description is required");
             }
             if (TextUtils.isEmpty(edit_subtitle.getText().toString())) {
-                edit_subtitle.setError("Location is required");
+                edit_subtitle.setError("subtitle  is required");
             } else {
 
                 ToDo todo = new ToDo(edit_title.getText().toString(), edit_subtitle.getText().toString(), edit_desc.getText().toString());
