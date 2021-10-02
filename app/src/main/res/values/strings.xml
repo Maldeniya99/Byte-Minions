@@ -97,6 +97,7 @@
     <string name="txtValueVision" />
     <string name="YourCity" />
     <string name="btn_download" />
+    <string name="tv_display_value" />
     //sandani
     <string-array name="items">
         <item>select item</item>
