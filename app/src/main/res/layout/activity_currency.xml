@@ -120,4 +120,20 @@ android:text="Convert"
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_display_value"
+
+        android:layout_width="100dp"
+        android:layout_height="51dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="152dp"
+
+        android:hint="@string/tv_display_value"
+        android:text="amount"
+        android:textColor="@color/black"
+        android:textSize="25sp">
+
+    </TextView>
 </LinearLayout>
