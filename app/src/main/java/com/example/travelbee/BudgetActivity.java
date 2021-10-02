@@ -145,6 +145,7 @@ public class BudgetActivity extends AppCompatActivity {
 
     private void addItemSpentOn() {
 
+        //get input layout
         AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
 
@@ -155,11 +156,13 @@ public class BudgetActivity extends AppCompatActivity {
         final AlertDialog dialog = myDialog.create();
         dialog.setCancelable(false);
 
+        //spinner for list all expenses
         final Spinner itemSpinner = myView.findViewById(R.id.spinner);
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.items));
         itemsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         itemSpinner.setAdapter(itemsAdapter);
+
 
         final EditText amount = myView.findViewById(R.id.amount);
         final EditText notes = myView.findViewById(R.id.note);
@@ -174,6 +177,7 @@ public class BudgetActivity extends AppCompatActivity {
                 String note = notes.getText().toString();
                 String mItem = itemSpinner.getSelectedItem().toString();
 
+                //validations starts from here
                 if (TextUtils.isEmpty(mAmount)){
                     amount.setError("Amount required!");
                     return;
