@@ -103,6 +103,7 @@ public class BudgetActivity extends AppCompatActivity {
     }
 
     private void readItems(){
+        //Budget cal function to get total method
         BudgetCal budgetCal = new BudgetCal();
 
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -110,7 +111,7 @@ public class BudgetActivity extends AppCompatActivity {
         String date = dateFormat.format(cal.getTime());
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(onlineUserId).child("expenses");
-//       DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        //DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         //DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("expenses");
         Query query = reference.orderByChild("date").equalTo(date);
         query.addValueEventListener(new ValueEventListener() {
