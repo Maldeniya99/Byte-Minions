@@ -1,10 +1,7 @@
 package com.example.travelbee;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.junit.Before;
-import org.junit.jupiter.api.BeforeEach;
-
-import static org.junit.Assert.*;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
