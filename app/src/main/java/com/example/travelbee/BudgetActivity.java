@@ -103,6 +103,7 @@ public class BudgetActivity extends AppCompatActivity {
     }
 
     private void readItems(){
+        BudgetCal budgetCal = new BudgetCal();
 
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
@@ -115,6 +116,7 @@ public class BudgetActivity extends AppCompatActivity {
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 myDataList.clear();
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                     Data data = dataSnapshot.getValue(Data.class);
@@ -128,7 +130,8 @@ public class BudgetActivity extends AppCompatActivity {
                     Map< String, Object> map = (Map<String, Object>) ds.getValue();
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
-                    totalAmount+=pTotal;
+                    //totalAmount+=pTotal;
+                    totalAmount = budgetCal.sumTotal(totalAmount, pTotal);
 
                     amountTxtview.setText("Total Day's Spending: "+totalAmount);
 
@@ -142,6 +145,11 @@ public class BudgetActivity extends AppCompatActivity {
             }
         });
     }
+
+//     protected int sumTotal(int totalAmount, int pTotal) {
+//        totalAmount = totalAmount + pTotal;
+//                return totalAmount;
+//    }
 
     private void addItemSpentOn() {
 
