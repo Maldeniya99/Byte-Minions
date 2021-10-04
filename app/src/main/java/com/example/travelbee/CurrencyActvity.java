@@ -29,12 +29,12 @@ public class CurrencyActvity extends AppCompatActivity {
         b1 = findViewById(R.id.btn1);
         display_value = findViewById(R.id.tv_display_value);
 
-        String[] from = {"Sl rupees (Rs)"};
+        String[] from= {"USD (US$)", "EUR (€)", "AUD (A$)", "CAD (C$)", "INR (₹)"};
         ArrayAdapter ad = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, from);
         sp1.setAdapter(ad);
 
 
-        String[] to = {"USD (US$)", "EUR (€)", "AUD (A$)", "CAD (C$)", "INR (₹)"};
+        String[] to = {"Sl rupees (Rs)"};
         ArrayAdapter ad1 = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, to);
         sp2.setAdapter(ad1);
 
@@ -57,20 +57,20 @@ public class CurrencyActvity extends AppCompatActivity {
             Double currency = Double.parseDouble(currency_value);
 
 
-            if (sp1.getSelectedItem().toString() == "Sl rupees (Rs)" && sp2.getSelectedItem().toString() == "USD (US$)") {
-                currency = c_calculations.convertSLruppeeToUSD(currency);
+            if (sp2.getSelectedItem().toString() == "Sl rupees (Rs)" && sp1.getSelectedItem().toString() == "USD (US$)") {
+                currency = c_calculations.convertUSDToSLruppee(currency);
                 display_value.setText(new Double(currency).toString());
-            } else if (sp1.getSelectedItem().toString() == "Sl rupees (Rs)" && sp2.getSelectedItem().toString() == "EUR (€)") {
-                currency = c_calculations.convertSLrupeeToEUR(currency);
+            } else if (sp2.getSelectedItem().toString() == "Sl rupees (Rs)" && sp1.getSelectedItem().toString() == "EUR (€)") {
+                currency = c_calculations.convertEURToSLruppee(currency);
                 display_value.setText(new Double(currency).toString());
-            } else if (sp1.getSelectedItem().toString() == "Sl rupees (Rs)" && sp2.getSelectedItem().toString() == "AUD (A$)") {
-                currency = c_calculations.convertSLrupeeToAUD(currency);
+            } else if (sp2.getSelectedItem().toString() == "Sl rupees (Rs)" && sp1.getSelectedItem().toString() == "AUD (A$)") {
+                currency = c_calculations.convertAUDToSLruppee(currency);
                 display_value.setText(new Double(currency).toString());
-            } else if (sp1.getSelectedItem().toString() == "Sl rupees (Rs)" && sp2.getSelectedItem().toString() == "CAD (C$)") {
-                currency = c_calculations.convertSLrupeeToCAD(currency);
+            } else if (sp2.getSelectedItem().toString() == "Sl rupees (Rs)" && sp1.getSelectedItem().toString() == "CAD (C$)") {
+                currency = c_calculations.convertCADToSLruppee(currency);
                 display_value.setText(new Double(currency).toString());
-            } else if (sp1.getSelectedItem().toString() == "Sl rupees (Rs)" && sp2.getSelectedItem().toString() == "INR (₹)") {
-                currency = c_calculations.convertSLrupeeToINR(currency);
+            } else if (sp2.getSelectedItem().toString() == "Sl rupees (Rs)" && sp1.getSelectedItem().toString() == "INR (₹)") {
+                currency = c_calculations.convertINRToSLruppee(currency);
                 display_value.setText(new Double(currency).toString());
 
             }
