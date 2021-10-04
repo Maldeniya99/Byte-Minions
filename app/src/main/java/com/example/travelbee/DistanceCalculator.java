@@ -161,17 +161,18 @@ public class DistanceCalculator extends AppCompatActivity {
     }
 
     public void distance(double lat1, double long1, double lat2, double long2) {
+        DistanceCalculations calculations = new DistanceCalculations();
         //Calculate longitude difference
         double longDiff = long1 - long2;
         //Calculate distance
-        distance = Math.sin(deg2rad(lat1))
-                * Math.sin(deg2rad(lat2))
-                + Math.cos(deg2rad(lat1))
-                * Math.cos(deg2rad(lat2))
-                * Math.cos(deg2rad(longDiff));
+        distance = Math.sin(calculations.deg2rad(lat1))
+                * Math.sin(calculations.deg2rad(lat2))
+                + Math.cos(calculations.deg2rad(lat1))
+                * Math.cos(calculations.deg2rad(lat2))
+                * Math.cos(calculations.deg2rad(longDiff));
         distance = Math.acos(distance);
         //Convert distance radian to degree
-        distance = rad2deg(distance);
+        distance = calculations.rad2deg(distance);
         //Distance in miles
         distance= distance * 60 * 1.1515;
         //Distance in kilometers
@@ -186,12 +187,5 @@ public class DistanceCalculator extends AppCompatActivity {
         return super.onSupportNavigateUp();
     }
 
-    private double rad2deg(double distance) {
-        return(distance * 180.0/Math.PI);
-    }
 
-    //Convert degree to radian
-    private double deg2rad(double lat1) {
-        return(lat1*Math.PI/180.0);
-    }
 }

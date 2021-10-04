@@ -179,6 +179,9 @@ public class CreateMemory extends AppCompatActivity implements DatePickerDialog.
                         image.setImageURI(result);
                         imageUri = result;
                     }
+                    else{
+                        Toast.makeText(CreateMemory.this, "Please Upload Image", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 
